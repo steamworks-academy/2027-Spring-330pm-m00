@@ -390,11 +390,19 @@ h2 {
   border-color: var(--signal);
 }
 
+.control-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+}
+
 .control-hint {
   display: flex;
   align-items: center;
   gap: 7px;
-  margin: 22px 0 0;
+  margin: 0;
   color: var(--ink-muted);
   font-size: 11px;
   transition: color 500ms ease;
@@ -414,6 +422,43 @@ h2 {
   background: var(--signal);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 22%, transparent);
   transition: background-color 500ms ease;
+}
+
+.reset-button {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 6px;
+  min-height: 30px;
+  padding: 6px 10px;
+  border: 1px solid var(--soft-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 730;
+  letter-spacing: 0.02em;
+  transition: border-color 220ms ease, background-color 220ms ease, color 220ms ease, opacity 220ms ease;
+}
+
+.reset-button:hover:not(:disabled) {
+  border-color: var(--signal);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.reset-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.reset-icon {
+  color: var(--signal);
+  font-size: 15px;
+  line-height: 0.8;
+  transition: color 500ms ease;
 }
 
 .contract-card {
@@ -520,6 +565,60 @@ h2 {
   left: -110px;
   width: 340px;
   height: 340px;
+}
+
+/* Keep the mood crossfade unified across the whole surface. */
+.mood-lab {
+  --theme-duration: 760ms;
+  --theme-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  transition: background-color var(--theme-duration) var(--theme-ease), color var(--theme-duration) var(--theme-ease);
+}
+
+.mood-lab .site-header,
+.mood-lab .wordmark,
+.mood-lab .wordmark-mark,
+.mood-lab .header-note,
+.mood-lab .site-footer,
+.mood-lab .eyebrow,
+.mood-lab .emoji-orbit,
+.mood-lab .emoji-orbit-ring,
+.mood-lab .active-label,
+.mood-lab .active-label span,
+.mood-lab .intro-copy,
+.mood-lab .prompt,
+.mood-lab .mini-rule span,
+.mood-lab .control-panel,
+.mood-lab .count-badge,
+.mood-lab .button-index,
+.mood-lab .button-note,
+.mood-lab .button-arrow,
+.mood-lab .control-hint,
+.mood-lab .control-hint strong,
+.mood-lab .hint-dot,
+.mood-lab .reset-button,
+.mood-lab .reset-icon,
+.mood-lab .contract-card,
+.mood-lab .contract-description,
+.mood-lab .token-swatch,
+.mood-lab .token-label,
+.mood-lab .token-value {
+  transition-duration: var(--theme-duration);
+  transition-timing-function: var(--theme-ease);
+}
+
+.mood-lab h1,
+.mood-lab h2,
+.mood-lab .button-name {
+  color: var(--ink);
+  transition: color var(--theme-duration) var(--theme-ease);
+}
+
+.mood-lab .mood-button {
+  transition: background-color var(--theme-duration) var(--theme-ease), border-color var(--theme-duration) var(--theme-ease), color var(--theme-duration) var(--theme-ease), box-shadow var(--theme-duration) var(--theme-ease), transform 220ms ease;
+}
+
+.mood-lab .orb {
+  transition: border-color var(--theme-duration) var(--theme-ease), transform 1000ms ease;
 }
 
 @keyframes arrive {

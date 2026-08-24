@@ -217,10 +217,24 @@ export default function Home() {
             })}
           </div>
 
-          <p className="control-hint">
-            <span className="hint-dot" aria-hidden="true" />
-            Active palette: <strong>{mood.name}</strong>
-          </p>
+          <div className="control-footer">
+            <p className="control-hint">
+              <span className="hint-dot" aria-hidden="true" />
+              Active palette: <strong>{mood.name}</strong>
+            </p>
+            <button
+              className="reset-button"
+              type="button"
+              aria-label="Reset mood to Sunny"
+              disabled={activeMood === 'sunny'}
+              onClick={() => setActiveMood('sunny')}
+            >
+              <span className="reset-icon" aria-hidden="true">
+                ↺
+              </span>
+              <span>Reset to Sunny</span>
+            </button>
+          </div>
         </section>
       </div>
 
