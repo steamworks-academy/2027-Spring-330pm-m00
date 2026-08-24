@@ -14,7 +14,7 @@ instruction to keep work local or use a different repository takes precedence.
 - Inspect the repository root, current branch, configured remote, and working
   tree before making changes.
 - Derive a short lowercase hyphenated slug from the new task or thread title.
-- Create the work in `creations/<task-slug>/` before implementation begins.
+- Create the work in `./<task-slug>/` before implementation begins.
   If the user names a folder or the repository has an established project
   layout, honor that explicit location while keeping the work isolated.
 - Resolve folder collisions before writing. Do not overwrite an existing task
