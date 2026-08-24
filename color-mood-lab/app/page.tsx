@@ -2,7 +2,7 @@
 
 import { useState, type CSSProperties } from 'react';
 
-type MoodKey = 'sunny' | 'calm' | 'space';
+type MoodKey = 'sunny' | 'calm' | 'space' | 'bloom';
 
 type Mood = {
   label: string;
@@ -105,9 +105,37 @@ const moods: Record<MoodKey, Mood> = {
       '--wash': 'rgba(48, 43, 99, 0.72)',
     },
   },
+  bloom: {
+    label: '04 / Bloom',
+    name: 'Bloom',
+    heading: 'Make something tender.',
+    description:
+      'A blush-and-berry palette for gentle momentum and ideas in full color.',
+    emoji: '🌸',
+    note: 'tender + alive',
+    colors: {
+      canvas: '#F2B8B8',
+      ink: '#381F34',
+      surface: '#FFF1E6',
+      signal: '#B63D6D',
+    },
+    cssVars: {
+      '--canvas': '#F2B8B8',
+      '--ink': '#381F34',
+      '--ink-muted': '#76505F',
+      '--surface': '#FFF1E6',
+      '--surface-strong': '#FFF9F2',
+      '--signal': '#B63D6D',
+      '--signal-contrast': '#FFF1E6',
+      '--line': '#CC8497',
+      '--soft-line': '#DDA4B2',
+      '--shadow': 'rgba(111, 43, 73, 0.18)',
+      '--wash': 'rgba(255, 241, 230, 0.63)',
+    },
+  },
 };
 
-const moodOrder: MoodKey[] = ['sunny', 'calm', 'space'];
+const moodOrder: MoodKey[] = ['sunny', 'calm', 'space', 'bloom'];
 
 export default function Home() {
   const [activeMood, setActiveMood] = useState<MoodKey>('sunny');
@@ -125,7 +153,7 @@ export default function Home() {
           </span>
           <span>Color Mood Lab</span>
         </a>
-        <p className="header-note">Three palettes. One tiny experiment.</p>
+        <p className="header-note">Four palettes. One tiny experiment.</p>
       </header>
 
       <div className="lab-grid" id="top">
@@ -162,7 +190,7 @@ export default function Home() {
               <p className="eyebrow">The controls</p>
               <h2 id="choose-mood">Choose a mood</h2>
             </div>
-            <span className="count-badge">03 options</span>
+            <span className="count-badge">04 options</span>
           </div>
 
           <div className="mood-list" role="group" aria-label="Mood choices">
