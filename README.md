@@ -6,7 +6,6 @@
 - [Open Story Spinner](https://kid-safe-story-spinner.hanlin-6835.chatgpt.site) — [project files](./kid-safe-story-spinner)
 - [Open Wildly Curious Animal Quiz](https://wildly-curious-animal-quiz.hanlin-6835.chatgpt.site) — [project files](./animal-quiz-adventure)
 
-Color Mood Lab is an interactive color study with four moods: Sunny, Calm, Space, and Bloom. Each mood updates the page palette, heading, emoji, and color contract.
 
 ## Project files
 
